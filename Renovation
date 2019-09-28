@@ -1,0 +1,117 @@
+package Homework;
+
+import java.util.Scanner;
+
+
+public class Renovation {
+
+	public static void main(String[] args) {
+		
+		Scanner keyboard = new Scanner(System.in);
+		
+		 	//variables
+			double roomLength = 0;
+	        double roomWidth= 0;
+	        double roomHeight= 0;
+	        double roomFloorArea= 0;
+	        double roomWallArea= 0;
+
+	        double doorWidth= 0;
+	        double doorHeight= 0;
+	        double doorArea= 0;
+	      
+	        double firstWindowWidth = 0;
+	        double firstWindowHeight = 0;
+	        double firstWindowArea = 0;
+	     
+	        double secondWindowWidth = 0;
+	        double secondWindowHeight = 0;
+	        double secondWindowArea = 0;
+
+	        double shelfLength = 0;
+	        double shelfHeight = 0;
+	        double shelfDepth = 0;
+	        double shelfArea = 0;
+	        double shelfBaseArea = 0;
+	        double shelfBackArea = 0;
+	       
+	        double paintingCostPerSqrFeet = 0;
+	        double carpetingCostPerSqrFeet = 0;
+	        double totalCost = 0;
+	        double paintingCost = 0;
+	        double carpetCost = 0;
+	   
+      //asking user for input data
+		System.out.println("ENTER ROOM LENGTH");
+		roomLength = keyboard.nextDouble();
+		
+		System.out.println("ENTER ROOM WIDTH");
+		roomWidth = keyboard.nextDouble();
+		
+		
+		System.out.println("ENTER ROOM HEIGHT");
+	    roomHeight = keyboard.nextDouble();
+	    
+	    
+	    
+	    System.out.println("ENTER DOOR WIDTH");
+	    doorWidth= keyboard.nextDouble();
+	    
+	    System.out.println("ENTER DOOR HEIGHT");
+	    doorHeight= keyboard.nextDouble();
+	 
+		
+	   System.out.println("ENTER FIRST WINDOW WIDTH");
+		firstWindowWidth= keyboard.nextDouble();
+		
+		System.out.println("ENTER FIRST WINDOW HEIGHT");
+		firstWindowHeight=keyboard.nextDouble();
+	
+	    
+	    System.out.println("ENTER SECOND WINDOW WIDTH");
+	    secondWindowArea=keyboard.nextDouble();
+	    
+	    System.out.println("ENTER SECOND WINDOW HEIGHT");
+	    secondWindowHeight= keyboard.nextDouble();
+	    
+	    
+	    System.out.println("ENTER SHELF LENGTH");
+		shelfLength= keyboard.nextDouble();
+		
+		System.out.println("ENTER SHELF HEIGHT");
+		shelfHeight= keyboard.nextDouble();
+		
+		System.out.println("ENTER SHELF DEPTH");
+		shelfDepth= keyboard.nextDouble();
+		
+		
+		
+		System.out.println("ENTER PAINTING COST PER SQ FT");
+		paintingCostPerSqrFeet = keyboard.nextDouble(); // variable
+		
+        System.out.println("ENTER CARPETING COST PER SQ FT");
+        carpetingCostPerSqrFeet = keyboard.nextDouble(); // variable 
+       
+	    roomFloorArea= roomLength * roomWidth;
+	    
+	    roomWallArea= (2 * roomLength*roomHeight+2* roomWidth * roomHeight);
+	    
+	    doorArea= doorWidth* doorHeight;
+	    
+	    firstWindowArea= firstWindowWidth * firstWindowHeight;
+	    
+	    secondWindowArea= secondWindowWidth * secondWindowHeight;
+	    
+	    shelfBackArea= shelfLength * shelfDepth;
+	    
+	    shelfBaseArea= shelfHeight * shelfDepth;
+	    
+	    carpetCost=(carpetingCostPerSqrFeet)*(roomFloorArea-firstWindowArea-secondWindowArea-shelfBackArea);
+	    
+	    paintingCost=(paintingCostPerSqrFeet)*(roomWallArea - doorArea-firstWindowArea-secondWindowArea-shelfBackArea);
+		
+	    System.out.println("COST OF CARPET " + carpetCost);
+	    System.out.println("TOTAL COST OF PAINT " + paintingCost);
+	} // End of class
+
+} // End of main
